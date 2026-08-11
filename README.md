@@ -1,9 +1,10 @@
 # 📦 Release Notes: Controller Firmware
 
-## [v1.40] - 2026-08-11 (Latest)
+## [v1.40] - 2026-08-12 (Latest)
 ### ✨ Added
 - **제품 프로파일 공장 기본값**: product_defaults.json → config_defaults.h 빌드타임 주입
-- **Factory Reset 전체 프로파일 적용**: Max Voltage·전압/팬 한도·Slave ID·Baud 등 포함 (시리얼만 장치 값 보존)
+- **Factory Reset (NIR만) 프로파일 전체 적용**: Max Voltage·전압/팬 한도·Slave ID·Baud 등 포함 (시리얼만 보존)
+- **Factory Reset (SWIR)**: 기존 공장초기화 로직 유지 (Admin 캘리브 보존, 사용자 필드만 리셋)
 - **PC 툴 연동**: 제품 프로파일 내보내기/불러오기 및 FW 디폴트 저장
 
 ### 🛠️ Technical Updates
