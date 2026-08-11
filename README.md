@@ -1,6 +1,23 @@
-# 🚀 Release Notes: Controller Firmware
+# 📦 Release Notes: Controller Firmware
 
-## [v1.30] - 2026-04-17 (Latest)
+## [v1.40] - 2026-08-11 (Latest)
+### ✨ Added
+- **제품 프로파일 공장 기본값**: product_defaults.json → config_defaults.h 빌드타임 주입
+- **Factory Reset 전체 프로파일 적용**: Max Voltage·전압/팬 한도·Slave ID·Baud 등 포함 (시리얼만 장치 값 보존)
+- **PC 툴 연동**: 제품 프로파일 내보내기/불러오기 및 FW 디폴트 저장
+
+### 🛠️ Technical Updates
+- **NIR Modbus ID 고정**: NIR 모드에서는 통신 Slave ID를 항상 **0**으로 동작 (SWIR 국번은 FRAM 유지)
+- **Slave ID 0 허용**: Modbus 국번 범위 0~247
+- **CMake POST_BUILD 수정**: 없는 swir_modbus_tester.exe 복사로 빌드 실패하던 문제 해결
+
+### 📁 Artifacts
+- V1.4/PowrayIR_SWIR_Controller_FW.hex
+- V1.4/PowrayIR_SWIR_Controller_FW.elf
+
+---
+
+## [v1.30] - 2026-04-17
 ### ✨ Added
 - **UI/UX 개선**: `SAVE / Boost` 메뉴 진입 후 롱 프레스(Long Press)로 닫기 기능 추가
 - **메뉴 명칭 변경**: `SAVE` → `SAVE MEM`으로 문구 수정 및 시인성 향상
