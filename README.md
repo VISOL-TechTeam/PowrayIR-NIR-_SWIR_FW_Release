@@ -1,32 +1,32 @@
-# 📦 Release Notes: Controller Firmware
+# 📦 릴리즈 노트: Controller Firmware
 
 ## [v1.40] - 2026-08-12 (Latest)
-### ✨ Added
+### ✨ 추가
 - **제품 프로파일 공장 기본값**: product_defaults.json → config_defaults.h 빌드타임 주입
 - **Factory Reset (NIR만) 프로파일 전체 적용**: Max Voltage·전압/팬 한도·Slave ID·Baud 등 포함 (시리얼만 보존)
 - **Factory Reset (SWIR)**: 기존 공장초기화 로직 유지 (Admin 캘리브 보존, 사용자 필드만 리셋)
 - **PC 툴 연동**: 제품 프로파일 내보내기/불러오기 및 FW 디폴트 저장
 
-### 🛠️ Technical Updates
+### 🛠️ 기술 변경
 - **NIR Modbus ID 고정**: NIR 모드에서는 통신 Slave ID를 항상 **0**으로 동작 (SWIR 국번은 FRAM 유지)
 - **Slave ID 0 허용**: Modbus 국번 범위 0~247
 - **CMake POST_BUILD 수정**: 없는 swir_modbus_tester.exe 복사로 빌드 실패하던 문제 해결
 
-### 📁 Artifacts
+### 📁 산출물
 - V1.4/PowrayIR_SWIR_Controller_FW.hex
 - V1.4/PowrayIR_SWIR_Controller_FW.elf
 
 ---
 
 ## [v1.30] - 2026-04-17
-### ✨ Added
+### ✨ 추가
 - **UI/UX 개선**: `SAVE / Boost` 메뉴 진입 후 롱 프레스(Long Press)로 닫기 기능 추가
 - **메뉴 명칭 변경**: `SAVE` → `SAVE MEM`으로 문구 수정 및 시인성 향상
 - **기기 정보(About) 탭**: 팝업 메뉴 내 기기 정보 표기를 위한 신설 페이지 추가
 - **로고 업데이트**: About 페이지 내 텍스트 로고를 실제 **NIR 로고 이미지**로 대체 및 렌더링 위치 최적화
 - **모니터링 기능**: Modbus 테스트 프로그램내 OLED Monitor 탭 추가, 시작/정지/주기설정/캡처/180도 회전
 
-### ⚙️ Technical Updates
+### ⚙️ 기술 변경
 - **타이머 정밀도 최적화**: 하드웨어 전용 타이머(**TIM13, 10ms**) 기반 런타임 엔진 재설계 (기존 소프트웨어 타이머 오차 해결 및 HSI 정밀 튜닝 적용)
 - **Modbus 버그 수정**: 부스트 모드(101 설정) 강제 진입 시 발생하던 온도 안전 한계치 예외 오류(`Value Error`) 수정
 - **시스템 최적화**: FW Version 관리 체계를 `define.h` 기준으로 통일하고 UI 렌더링 범위 압축 최적화 수행
@@ -35,17 +35,17 @@
 ---
 
 ## [v1.21]
-### ✨ Added
+### ✨ 추가
 - **NIR Normal Limit Runtime**: Dimming이 0보다 큰 상태에서 설정된 시간이 경과하면 자동으로 0%로 전환되는 보호 기능 추가
 - **Modbus 매핑**: `0x1105` 레지스터 추가 (0: 제한 없음, 1~7200: 초 단위 설정)
 
-### 🐞 Fixed
+### 🐞 수정
 - 기타 마이너 버그 수정 및 안정성 향상
 
 ---
 
 ## [v1.20]
-### 🚀 New Features
+### 🚀 신규 기능
 - **부스트(Boost) 모드**: 고출력 동작을 위한 부스트 기능 및 온도 커브 알고리즘 적용
 - **부스트 전용 UI**: 동작 시 설정 시간 다운카운트 표시 (무제한 설정 시 "BOOST" 텍스트 상시 노출)
 - **제어 로직 변경**: 부스트 종료 방식을 기존 '길게 누름'에서 '짧게 누름'으로 변경하여 편의성 증대
@@ -65,14 +65,14 @@
 ---
 
 ## [v1.02]
-### ✨ Added
+### ✨ 추가
 - **Soft Start/Stop**: SWIR 구동 시 급격한 전류 변화 방지를 위한 소프트 스타트/스톱 로직 추가
 - **정밀 제어**: 채널 Dimming 제어 방식을 소수점 단위로 수정하여 정밀도 향상
 
 ---
 
 ## [v1.01]
-### 🎨 Visuals
+### 🎨 비주얼
 - 부팅 및 메인 화면에 **SWIR/NIR 로고 이미지** 적용
 
 ---
